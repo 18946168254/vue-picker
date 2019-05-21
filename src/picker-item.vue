@@ -193,7 +193,8 @@
         for(let i = 0; i < spans.length; i++) {
           let dis = Math.abs(i * 18 - deg);
           let n = Math.abs(1 - dis / 18 * 0.1);
-          spans[i].style.opacity = Math.abs(n - 0.5);
+          let opacity = (n - 0.5)
+          spans[i].style.opacity = opacity < 0 ? 0 : opacity;
           spans[index] && (spans[index].style.opacity = 1);
         }
       },
